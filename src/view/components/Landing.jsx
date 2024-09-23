@@ -4,7 +4,7 @@ import image from '../images/crm-home-stay-informed.svg';
 
 const Landing = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center bg-[url('/img/hero-pattern.svg')]">
+        <div className="flex flex-col md:flex-row items-center justify-center ">
             <div className="flex flex-col md:flex-row items-center justify-between ">
                 {/* Text Section */}
                 <div className="flex-1 text-center md:text-left ">
