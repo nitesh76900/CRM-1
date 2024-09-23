@@ -4,10 +4,10 @@ import image from '../images/crm-home-stay-informed.svg';
 
 const Landing = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center w-screen min-h-screen bg-gray-100 p-5">
-            <div className="bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center justify-between w-screen max-w-6xl p-8">
+        <div className="flex flex-col md:flex-row items-center justify-center bg-[url('/img/hero-pattern.svg')]">
+            <div className="flex flex-col md:flex-row items-center justify-between ">
                 {/* Text Section */}
-                <div className="flex-1 text-center md:text-left md:mr-8 mb-8 md:mb-0">
+                <div className="flex-1 text-center md:text-left ">
                     <h1 className="text-4xl font-bold mb-4">Welcome to Our Home Page</h1>
                     <p className="text-gray-700 mb-6 text-lg">
                         This is a brief description of our website. Here you can find various resources and information that may be useful to you.
@@ -25,7 +25,7 @@ const Landing = () => {
                     <img 
                         src={image}
                         alt="Stay Informed" 
-                        className="rounded-lg shadow-lg w-full h-full object-cover"
+                        className="p-8 w-full h-full object-cover"
                     />
                 </div>
             </div>
