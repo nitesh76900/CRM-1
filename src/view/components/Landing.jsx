@@ -1,4 +1,6 @@
+import {Link } from 'react-router-dom'
 import React from 'react';
+import image from '../images/crm-home-stay-informed.svg'
 
 const Landing = () => {
     return (
@@ -9,16 +11,16 @@ const Landing = () => {
                     This is a brief description of our website. Here you can find various resources and information that may be useful to you.
                 </p>
                 <img 
-                    src="https://via.placeholder.com/600x400" 
+                    src={image} 
                     alt="Sample" 
                     className="rounded-lg mb-6"
                 />
-                <a 
-                    href="#"
+                <Link 
+                    to={"/login"}
                     className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-200"
                 >
-                    Get
-                </a>
+                    Get Free CRM
+                </Link>
             </div>
         </div>
     );
