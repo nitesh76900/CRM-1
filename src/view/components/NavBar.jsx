@@ -13,9 +13,13 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    setIsAuthenticated(!!user);
+    const fetchUser = async () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+      setIsAuthenticated(!!user);
+    };
+    fetchUser();
   }, []);
+  
 
   const handleLogout = () => {
     logout();
@@ -37,18 +41,21 @@ const Navbar = () => {
             <Link to="/" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Home
             </Link>
-            <Link to="/dealform" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
+            {/* <Link to="/dealform" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Pipeline
             </Link>
             <Link to="/todo" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Todo
-            </Link>
+            </Link> */}
             <Link to="/contactus" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Contact Us
             </Link>
-            <Link to="/profile" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
-              Profile
+            <Link to="/aboutus" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
+              About Us
             </Link>
+            {/* <Link to="/profile" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
+              Profile
+            </Link> */}
 
             {isAuthenticated ? (
               <button

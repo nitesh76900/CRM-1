@@ -1,25 +1,25 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../services/authService';
-import { useNavigate } from 'react-router-dom';
-// import { useAuth } from '../../context/Context';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
-  // const {user} = useAuth()
-  // const {isAuthenticated, setIsAuthenticated} = useState(user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);  // Disable button while submitting to prevent multiple clicks
     try {
       const userData = await login(email, password);
-      localStorage.setItem('user', JSON.stringify(userData));
-      navigate('/');
+      localStorage.setItem('user', JSON.stringify(userData)); // Consider debouncing this if needed
+      navigate('/sidebar');
     } catch (error) {
       alert(error);
+    } finally {
+      setIsSubmitting(false);  // Re-enable button
     }
   };
 
@@ -58,10 +58,13 @@ const LoginPage = () => {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 transition duration-200"
+              className={`w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ${
+                isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+              }`}
               type="submit"
+              disabled={isSubmitting}  // Disable while submitting
             >
-              Login
+              {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
           </div>
         </form>
@@ -72,11 +75,6 @@ const LoginPage = () => {
               Sign Up
             </Link>
           </p>
-          {/* <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            <Link to="/resetpassword" className="text-blue-500 hover:underline">
-              Reset Password
-            </Link>
-          </p> */}
         </div>
       </div>
     </div>

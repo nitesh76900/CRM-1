@@ -1,15 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../services/authService';
-import { useState } from 'react';
 const Sidebar = () => {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // e.preventDefault()
+    
     logout();
     localStorage.removeItem('user');
-    // setIsAuthenticated(false);
     navigate('/');
   };
   return (
