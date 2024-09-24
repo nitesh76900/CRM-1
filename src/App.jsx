@@ -14,6 +14,7 @@ import ContactUs from "./view/screens/ContactUs";
 import { Context } from "./context/Context";
 import AboutUs from "./view/screens/AboutUs";
 import Sidebar from "./view/components/SideBar";
+import Company from "./view/screens/Company";
 
 // Example authentication check (replace with your actual logic)
 const isAuthenticated = localStorage.getItem("user");
@@ -34,7 +35,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/company" element={<Company />} />
 
           {/* Protected routes (require authentication) */}
           <Route

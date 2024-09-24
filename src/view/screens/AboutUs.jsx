@@ -1,82 +1,91 @@
-import React from 'react';
+import nitesh from '../images/nitesh.jpeg'
+import dhairya from '../images/Dhairya.png'
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto px-6">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-800">
-            About <span className="text-blue-600">Us</span>
-          </h1>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Empowering businesses to build stronger relationships and grow through customer-focused CRM solutions.
-          </p>
-        </div>
+    return (
+        <div className="bg-gray-100 min-h-screen p-6 md:p-12">
+            {/* Container */}
+            <div className="max-w-7xl mx-auto">
+                
+                {/* Company Mission Section */}
+                <section className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Us</h1>
+                    <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+                        Our CRM platform is designed to help businesses build stronger customer relationships. We focus on simplicity, efficiency, and powerful insights to drive growth for our clients.
+                    </p>
+                </section>
 
-        {/* Our Mission Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
-            <p className="text-gray-600 leading-relaxed">
-              At <span className="font-semibold">[Your CRM Name]</span>, our mission is to help businesses build meaningful connections with their customers. 
-              We provide cutting-edge tools that streamline processes, increase engagement, and drive sustainable growth.
-            </p>
-          </div>
+                {/* Our Story Section */}
+                <section className="md:flex items-center justify-between mb-16">
+                    <div className="flex-1 md:pr-8">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
+                        <p className="text-gray-600 text-lg">
+                            Established in 2024, we started with the vision of creating an easy-to-use CRM system for small and medium-sized businesses. Over the years, we have grown into a trusted partner for companies looking to optimize customer interactions, streamline processes, and make data-driven decisions.
+                        </p>
+                    </div>
+                    <div className="flex-1 mt-8 md:mt-0">
+                        <img
+                            src="https://images.pexels.com/photos/17382268/pexels-photo-17382268/free-photo-of-men-working-in-office.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Company History"
+                            className="rounded-lg shadow-lg w-full h-auto"
+                        />
+                    </div>
+                </section>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src="https://via.placeholder.com/500"
-              alt="CRM illustration"
-              className="rounded-lg w-full"
-            />
-          </div>
-        </div>
+                {/* Meet the Team Section */}
+                <section className="text-center mb-16">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-8">Meet the Team</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Team Member 1 */}
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <img
+                                src={dhairya}
+                                alt="Team Member 1"
+                                className="rounded-full w-32 h-32 mx-auto mb-4"
+                            />
+                            <h3 className="text-xl font-semibold text-gray-800">Dhairya Jain</h3>
+                            <p className="text-gray-600">Developer</p>
+                        </div>
 
-        {/* Our Values Section */}
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Value 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-2">Customer-Centric</h3>
-              <p className="text-gray-600">
-                Everything we do is designed with the customer in mind. We create solutions that cater to their needs and help businesses thrive.
-              </p>
+                        {/* Team Member 2 */}
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <img
+                                src={nitesh}
+                                alt="Team Member 2"
+                                className="rounded-full w-32 h-32 mx-auto mb-4"
+                            />
+                            <h3 className="text-xl font-semibold text-gray-800">Nitesh Kumawat</h3>
+                            <p className="text-gray-600">Developer</p>
+                        </div>
+
+                        {/* Team Member 3 */}
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <img
+                                src="https://via.placeholder.com/150"
+                                alt="Team Member 3"
+                                className="rounded-full w-32 h-32 mx-auto mb-4"
+                            />
+                            <h3 className="text-xl font-semibold text-gray-800">Naved Daiya</h3>
+                            <p className="text-gray-600">Developer</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Call to Action Section */}
+                <section className="text-center py-12 bg-green-500 text-white rounded-lg shadow-lg">
+                    <h2 className="text-3xl font-bold mb-4">Join Us on Our Journey</h2>
+                    <p className="text-lg mb-6 max-w-2xl mx-auto">
+                        Whether you're a small business looking to organize customer relationships or an enterprise aiming to optimize sales pipelines, we are here to help you succeed.
+                    </p>
+                    <Link to="/contactus" className="bg-white text-green-500 font-semibold py-3 px-6 rounded-lg shadow hover:bg-gray-100 transition duration-200">
+                        Contact Us
+                    </Link>
+                </section>
+
             </div>
-            {/* Value 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-2">Innovation</h3>
-              <p className="text-gray-600">
-                We embrace new technologies and continuously improve our platform to ensure our clients stay ahead of the curve.
-              </p>
-            </div>
-            {/* Value 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-2">Integrity</h3>
-              <p className="text-gray-600">
-                We operate with the highest ethical standards, ensuring transparency, honesty, and trust in everything we do.
-              </p>
-            </div>
-          </div>
         </div>
-
-        {/* Call to Action Section */}
-        <div className="mt-20 text-center bg-blue-600 py-12 rounded-lg shadow-lg">
-          <h2 className="text-4xl font-bold text-white mb-4">Ready to Grow Your Business?</h2>
-          <p className="text-white max-w-xl mx-auto mb-8">
-            Let’s work together to enhance your customer relationships and accelerate your business growth with our CRM solutions.
-          </p>
-          <a
-            href="/contact"
-            className="bg-white text-blue-600 py-3 px-8 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
-          >
-            Contact Us
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default AboutUs;

@@ -41,6 +41,9 @@ const Navbar = () => {
             <Link to="/" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Home
             </Link>
+            <Link to="/company" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
+              Company
+            </Link>
             {/* <Link to="/dealform" className="text-gray-600 dark:text-gray-200 hover:text-blue-500 transition duration-300">
               Pipeline
             </Link>
